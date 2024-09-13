@@ -4,6 +4,10 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Inter } from '@next/font/google' 
 
+const inter=Inter({
+  subsets: ['latin']
+}
+);
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,9 +37,10 @@ export default function RootLayout({
           'relative h-full font-sans antialiased',
           inter.className
       )}>
-            <main className='relative flex flex-col min-h-screen'></main>
-            <div> className='flex-grow flex-1{children}</div>
-      </body>
+            <main className='relative flex flex-col min-h-screen'>
+            <div className='flex-grow flex-1'>{children}</div>
+            </main>
+           </body>
     </html>
-  );
+  )
 }
